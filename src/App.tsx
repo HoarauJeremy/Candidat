@@ -7,23 +7,29 @@ import OffreEmploie from "@Routes/OffreEmploie.tsx";
 import Organisation from "@Routes/Organisation.tsx";
 import Utilisateur from "@Routes/Utilisateur.tsx";
 import Layout from "@Components/Accueil/Layout.tsx";
+import {ThemeProvider} from "@Components/theme-provider.tsx";
+import Accueil from "@Components/Accueil/Accueil.tsx";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path={"/"} element={<Layout />}>
-          <Route path={"candidature/*"} element={<Candidature />} />
-          <Route path={"commune/*"} element={<Commune />} />
-          <Route path={"document/*"} element={<Document />} />
-          <Route path={"metier/*"} element={<Metier />} />
-          <Route path={"offreEmploie/*"} element={<OffreEmploie />} />
-          <Route path={"organisation/*"} element={<Organisation />} />
-          <Route path={"utilisateur/*"} element={<Utilisateur />} />
+      <ThemeProvider defaultTheme={"dark"} storageKey={"vite-ui-theme"}>
+        <Routes>
+          <Route path={"/"} element={<Layout/>}>
+            <Route index element={<Accueil />} />
 
-          <Route path={"*"} element={"ERROR"} />
-        </Route>
-      </Routes>
+            <Route path={"candidature/*"} element={<Candidature/>}/>
+            <Route path={"commune/*"} element={<Commune/>}/>
+            <Route path={"document/*"} element={<Document/>}/>
+            <Route path={"metier/*"} element={<Metier/>}/>
+            <Route path={"offreEmploie/*"} element={<OffreEmploie/>}/>
+            <Route path={"organisation/*"} element={<Organisation/>}/>
+            <Route path={"utilisateur/*"} element={<Utilisateur/>}/>
+
+            <Route path={"*"} element={"ERROR"}/>
+          </Route>
+        </Routes>
+      </ThemeProvider>
     </>
   )
 }
