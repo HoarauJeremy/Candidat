@@ -7,7 +7,7 @@ const Utilisateur = () => {
     <>
       <Routes>
         <Route element={<Index />}>
-          <Route element={<List />}/>
+          <Route index element={<List />}/>
         </Route>
       </Routes>
     </>
