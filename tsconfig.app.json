@@ -28,7 +28,9 @@
       "@Components/*": ["components/*"],
       "@Routes/*": ["routes/*"],
       "@Utils/*": ["utils/*"],
-      "@/*": ["/*"]
+      "@/*": ["/*"],
+      "@/lib": ["lib/*"],
+      "@Assets": ["assets/*"]
     },
   },
   "include": ["src"]

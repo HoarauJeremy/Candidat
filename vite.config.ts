@@ -15,6 +15,8 @@ export default defineConfig({
       '@Components': path.resolve(__dirname, './src/components'),
       '@Routes': path.resolve(__dirname, './src/routes'),
       '@Utils': path.resolve(__dirname, './src/utils'),
+      '@/lib': path.resolve(__dirname, './src/lib'),
+      '@Assets': path.resolve(__dirname, './src/assets'),
     }
   }
 })
