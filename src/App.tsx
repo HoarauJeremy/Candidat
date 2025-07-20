@@ -1,14 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import Candidature from "@Routes/Candidature";
-import Commune from "@Routes/Commune.tsx";
-import Document from "@Routes/Document.tsx";
-import Metier from "@Routes/Metier.tsx";
-import OffreEmploie from "@Routes/OffreEmploie.tsx";
-import Organisation from "@Routes/Organisation.tsx";
-import Utilisateur from "@Routes/Utilisateur.tsx";
-import Layout from "@Components/Accueil/Layout.tsx";
 import {ThemeProvider} from "@Components/theme-provider.tsx";
-import Accueil from "@Components/Accueil/Accueil.tsx";
+
+import { AuthLayout, Login, Register } from "@Components/Authentification/Auth"
+import {Accueil, Candidature, Commune, Document, Layout, Metier, OffreEmploie, Organisation, Utilisateur} from "@Routes/routes";
 
 function App() {
   return (
@@ -17,6 +11,11 @@ function App() {
         <Routes>
           <Route path={"/"} element={<Layout/>}>
             <Route index element={<Accueil />} />
+
+            <Route path={"auth"} element={<AuthLayout />}>
+              <Route index path={"login"} element={<Login />} />
+              <Route path={"register"} element={<Register />} />
+            </Route>
 
             <Route path={"candidature/*"} element={<Candidature/>}/>
             <Route path={"commune/*"} element={<Commune/>}/>

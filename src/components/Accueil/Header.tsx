@@ -41,6 +41,10 @@ const Header = () => {
       name: 'Utilisateur',
       lien: 'utilisateur',
     },
+    {
+      name: 'Se connecter',
+      lien: '/auth/login',
+    }
   ]
 
   /*const toggleNav = () => {
